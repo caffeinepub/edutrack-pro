@@ -1,0 +1,178 @@
+{
+  "schemaVersion": "1.0.0",
+  "projectStateVersion": 7,
+  "summary": "EduTrack Pro – a full-featured desktop website school ERP application for Teachers and Principals. Features role-based login (Teacher: full edit, Principal: view-only), open teacher self-registration (no invite code required), dashboard with KPI widgets, student CRUD management, attendance tracking with charts, weekly test marks, midterm exam with rank list analysis (sorted by total marks with rank badges), dark mode, search/filter, and localStorage persistence.",
+  "architectural_notes": [
+    "Desktop website layout with sidebar navigation (not mobile bottom nav)",
+    "Role-based access: Teacher (full CRUD), Principal (view-only analytics)",
+    "All data persisted via localStorage; pre-loaded sample students on first load",
+    "Rank list in Midterm Exam sorted by highest total marks with 🥇🥈🥉 badges",
+    "Teacher registration is open (no invite code required); new teachers saved to localStorage for future login"
+  ],
+  "known_issues": [],
+  "isFixRequest": false,
+  "existing_features": [
+    {
+      "id": "feature-implement-a-role-based-login-system-with-a-username-password-form-pre-load-two-demo-accounts-teacher-username-teacher-password-class1-with-full-edit-access-and-principal-username-principal-password-admin-with-view-only-access-display-the-logged-in-user-s-name-and-role-on-the-dashboard-include-a-logout-button-and-maintain-session-state-via-localstorage",
+      "title": "Implement a role-based login system with a username/password form. Pre-load two demo accounts: Teacher (username: 'teacher', password: 'class1') with full edit access, and Principal (username: 'principal', password: 'admin') with view-only access. Display the logged-in user's name and role on the dashboard. Include a logout button and maintain session state via localStorage.",
+      "reqIds": [
+        "REQ-1"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-build-a-dashboard-screen-with-animated-kpi-summary-cards-showing-total-students-attendance-percentage-weekly-average-marks-and-midterm-class-average-include-quick-action-buttons-linking-to-manage-students-mark-attendance-weekly-test-and-midterm-exam-sections-display-animated-analytics-charts-for-attendance-and-exam-performance",
+      "title": "Build a Dashboard screen with animated KPI summary cards showing: Total Students, Attendance Percentage, Weekly Average Marks, and Midterm Class Average. Include quick action buttons linking to: Manage Students, Mark Attendance, Weekly Test, and Midterm Exam sections. Display animated analytics charts for attendance and exam performance.",
+      "reqIds": [
+        "REQ-2"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-implement-a-student-management-screen-with-full-crud-operations-display-students-in-a-card-list-view-showing-name-roll-number-class-and-parent-contact-include-add-edit-delete-and-update-buttons-support-search-by-name-and-filter-by-roll-number-ui-must-update-instantly-on-any-data-change-teacher-role-sees-all-action-buttons-principal-role-sees-read-only-view-pre-load-at-least-8-sample-students",
+      "title": "Implement a Student Management screen with full CRUD operations. Display students in a card/list view showing Name, Roll Number, Class, and Parent Contact. Include Add, Edit, Delete, and Update buttons. Support search by name and filter by roll number. UI must update instantly on any data change. Teacher role sees all action buttons; Principal role sees read-only view. Pre-load at least 8 sample students.",
+      "reqIds": [
+        "REQ-3"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-build-an-attendance-screen-where-the-teacher-selects-a-date-views-the-full-student-list-and-toggles-each-student-as-present-or-absent-on-saving-auto-calculate-total-present-count-total-absent-count-and-overall-attendance-percentage-display-a-summary-chart-e-g-pie-or-bar-chart-of-present-vs-absent-persist-attendance-records-by-date-in-localstorage",
+      "title": "Build an Attendance screen where the teacher selects a date, views the full student list, and toggles each student as Present or Absent. On saving, auto-calculate total present count, total absent count, and overall attendance percentage. Display a summary chart (e.g., pie or bar chart) of present vs absent. Persist attendance records by date in localStorage.",
+      "reqIds": [
+        "REQ-4"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-build-a-weekly-test-marks-screen-where-the-teacher-adds-a-subject-enters-marks-per-student-and-views-the-auto-calculated-class-average-and-class-topper-allow-editing-of-marks-after-entry-persist-weekly-test-data-in-localstorage",
+      "title": "Build a Weekly Test Marks screen where the teacher adds a subject, enters marks per student, and views the auto-calculated class average and class topper. Allow editing of marks after entry. Persist weekly test data in localStorage.",
+      "reqIds": [
+        "REQ-5"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-build-a-midterm-exam-screen-where-the-teacher-enters-subject-wise-marks-for-each-student-auto-calculate-total-marks-sum-of-all-subjects-percentage-and-grade-a-80-b-60-c-40-fail-40-display-a-rank-list-sorted-from-highest-to-lowest-total-marks-with-rank-badges-for-1st-for-2nd-for-3rd-showing-rank-student-name-total-marks-percentage-and-grade-for-every-student",
+      "title": "Build a Midterm Exam screen where the teacher enters subject-wise marks for each student. Auto-calculate Total Marks (sum of all subjects), Percentage, and Grade (A: ≥80%, B: ≥60%, C: ≥40%, Fail: <40%). Display a Rank List sorted from highest to lowest Total Marks with rank badges (🥇 for 1st, 🥈 for 2nd, 🥉 for 3rd) showing Rank, Student Name, Total Marks, Percentage, and Grade for every student.",
+      "reqIds": [
+        "REQ-6"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-implement-principal-mode-when-logged-in-as-principal-display-a-read-only-analytics-view-covering-all-classes-teacher-dashboards-class-performance-analytics-and-attendance-statistics-hide-all-add-edit-delete-controls-across-all-screens",
+      "title": "Implement Principal mode: when logged in as Principal, display a read-only analytics view covering all classes, teacher dashboards, class performance analytics, and attendance statistics. Hide all add/edit/delete controls across all screens.",
+      "reqIds": [
+        "REQ-7"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-implement-a-sidebar-navigation-desktop-layout-with-five-tabs-dashboard-students-attendance-exams-containing-weekly-test-and-midterm-sub-sections-and-profile-add-a-dark-mode-toggle-in-the-sidebar-or-header-that-switches-the-entire-app-between-light-and-dark-themes",
+      "title": "Implement a sidebar navigation (desktop layout) with five tabs: Dashboard, Students, Attendance, Exams (containing Weekly Test and Midterm sub-sections), and Profile. Add a dark mode toggle in the sidebar or header that switches the entire app between light and dark themes.",
+      "reqIds": [
+        "REQ-8"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-store-all-application-data-students-attendance-records-weekly-test-marks-midterm-exam-marks-session-state-dark-mode-preference-in-localstorage-so-data-persists-across-page-refreshes-pre-load-demo-data-on-first-launch-if-localstorage-is-empty",
+      "title": "Store all application data (students, attendance records, weekly test marks, midterm exam marks, session state, dark mode preference) in localStorage so data persists across page refreshes. Pre-load demo data on first launch if localStorage is empty.",
+      "reqIds": [
+        "REQ-9"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-apply-a-professional-modern-edtech-saas-visual-theme-across-the-entire-app-use-a-navy-blue-and-white-primary-palette-with-accent-colors-for-grades-and-status-indicators-use-card-based-layouts-clean-sans-serif-typography-smooth-card-entrance-animations-and-a-polished-school-erp-aesthetic-throughout-all-screens",
+      "title": "Apply a professional, modern EdTech SaaS visual theme across the entire app. Use a Navy Blue and White primary palette with accent colors for grades and status indicators. Use card-based layouts, clean sans-serif typography, smooth card entrance animations, and a polished school ERP aesthetic throughout all screens.",
+      "reqIds": [
+        "REQ-10"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-add-a-register-as-teacher-option-on-the-login-screen-clicking-it-reveals-a-registration-form-with-fields-for-display-name-username-password-and-a-registration-invite-code-the-fixed-invite-code-must-be-school2024-on-successful-registration-save-the-new-teacher-account-username-hashed-or-plain-password-displayname-role-teacher-to-localstorage-so-the-teacher-can-log-in-with-those-credentials-immediately-show-a-clear-error-if-the-invite-code-is-incorrect-after-successful-registration-redirect-the-user-to-the-login-form-with-a-success-message",
+      "title": "Add a 'Register as Teacher' option on the login screen. Clicking it reveals a registration form with fields for Display Name, Username, Password, and a Registration/Invite Code. The fixed invite code must be SCHOOL2024. On successful registration, save the new teacher account (username, hashed or plain password, displayName, role: 'teacher') to localStorage so the teacher can log in with those credentials immediately. Show a clear error if the invite code is incorrect. After successful registration, redirect the user to the login form with a success message.",
+      "reqIds": [
+        "REQ-11"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-remove-the-invite-code-field-and-its-validation-logic-from-the-teacher-registration-flow-the-registration-form-on-the-login-page-should-no-longer-display-a-registration-invite-code-input-field-the-authcontext-must-no-longer-require-or-validate-an-invite-code-when-registering-a-new-teacher-any-new-teacher-can-register-by-providing-only-their-display-name-username-and-password",
+      "title": "Remove the invite code field and its validation logic from the teacher registration flow. The registration form on the login page should no longer display a 'Registration/Invite Code' input field. The AuthContext must no longer require or validate an invite code when registering a new teacher — any new teacher can register by providing only their Display Name, Username, and Password.",
+      "reqIds": [
+        "REQ-12"
+      ],
+      "version": 1
+    }
+  ],
+  "new_feature_requests": [
+    {
+      "id": "AR-1",
+      "summary": "Role-based login system (Teacher full edit, Principal view-only) with demo accounts and session state",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-2",
+      "summary": "Dashboard screen with KPI summary cards (total students, attendance %, weekly avg marks, midterm avg) and quick action buttons",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-3",
+      "summary": "Student management CRUD (add, edit, delete, update) with search, filter by roll number, and instant UI updates",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-4",
+      "summary": "Attendance screen with date selection, present/absent toggle, percentage calculation, and summary chart",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-5",
+      "summary": "Weekly test marks screen with subject entry, per-student marks, class average, and topper display",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-6",
+      "summary": "Midterm exam screen with subject-wise marks, auto-calculated totals, percentages, grades, and rank list sorted by highest total marks with rank badges",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-7",
+      "summary": "Principal mode: view-only access to all classes, teacher dashboards, performance analytics, and attendance statistics",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-8",
+      "summary": "Dark mode toggle, export attendance report (PDF simulation), and sort by marks",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-9",
+      "summary": "Sidebar navigation (desktop web layout) with Dashboard, Students, Attendance, Exams, and Profile tabs",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-10",
+      "summary": "localStorage data persistence with pre-loaded demo students and animated analytics charts",
+      "reqIds": [],
+      "status": "pending"
+    }
+  ],
+  "gameProjectType": "none",
+  "projectName": "EduTrack Pro",
+  "clarification_mode": "instant",
+  "clarification_rounds": 0
+}

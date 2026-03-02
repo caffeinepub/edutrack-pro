@@ -1,0 +1,24 @@
+{
+  "kind": "feature_evidence_report",
+  "features": [
+    {
+      "featureId": "feature-remove-the-invite-code-field-and-its-validation-logic-from-the-teacher-registration-flow-the-registration-form-on-the-login-page-should-no-longer-display-a-registration-invite-code-input-field-the-authcontext-must-no-longer-require-or-validate-an-invite-code-when-registering-a-new-teacher-any-new-teacher-can-register-by-providing-only-their-display-name-username-and-password",
+      "featureTitle": "Remove the invite code field and its validation logic from the teacher registration flow. The registration form on the login page should no longer display a 'Registration/Invite Code' input field. The AuthContext must no longer require or validate an invite code when registering a new teacher — any new teacher can register by providing only their Display Name, Username, and Password.",
+      "files": [
+        "frontend/src/contexts/AuthContext.tsx",
+        "frontend/src/pages/LoginPage.tsx"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-12"
+      ],
+      "confidence": "high"
+    }
+  ]
+}

@@ -1,0 +1,10 @@
+{
+  "frontend/src/App.tsx": "Root application component that wraps everything in AuthProvider, seeds demo data on load, manages current page state, and renders either the LoginPage or the authenticated Layout with the correct page component.",
+  "frontend/src/pages/MidtermExamPage.tsx": "Full midterm exam page with subject management, per-student mark entry table, auto-calculated totals/percentages/grades, summary KPI cards, and a tabbed rank list view with 🥇🥈🥉 badges.",
+  "frontend/src/pages/ProfilePage.tsx": "Profile page showing the logged-in user's details, role badge, access permissions list, demo credentials reminder, and a footer with caffeine.ai attribution.",
+  "frontend/src/index.css": "Global styles with Inter font import, OKLCH color tokens for light/dark modes using a navy-blue EdTech palette, and keyframe animations for fade-in and slide-up effects.",
+  "frontend/tailwind.config.js": "Tailwind config extended with Inter font, navy color scale, edu-accent colors, card shadows, and slide-up/fade-in animation keyframes for the EduTrack Pro design system.",
+  "frontend/src/utils/storage.ts": "Storage utility with localStorage helpers, STORAGE_KEYS constants (including new REGISTERED_TEACHERS key), new RegisteredTeacher interface, getRegisteredTeachers/saveRegisteredTeachers helpers, and demo data seeding functions.",
+  "frontend/src/contexts/AuthContext.tsx": "Auth context provider supporting login for demo accounts and localStorage-registered teachers, plus a registerTeacher function (no invite code) that checks for duplicate usernames and persists new teacher accounts.",
+  "frontend/src/pages/LoginPage.tsx": "Login page with Sign In and Register as Teacher views; the registration form collects Display Name, Username, Password, and optional Class/Section — invite code field and validation have been removed."
+}

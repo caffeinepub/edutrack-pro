@@ -1,0 +1,36 @@
+{
+  "kind": "implementation_plan",
+  "version": "1.0",
+  "title": "Remove invite code from teacher registration",
+  "requirements": [
+    {
+      "id": "REQ-12",
+      "summary": "Remove invite code field and validation from teacher registration flow, allowing teachers to register with only Display Name, Username, and Password",
+      "acceptanceCriteria": [
+        "The teacher registration form does not contain an invite code input field.",
+        "Submitting the registration form with only Display Name, Username, and Password successfully creates a new teacher account.",
+        "No invite code validation logic remains in AuthContext.tsx or LoginPage.tsx.",
+        "Existing demo accounts (teacher/class1 and principal/admin) continue to work after the change.",
+        "Previously registered teachers stored in localStorage are still able to log in.",
+        "No error messages referencing an invite code appear anywhere in the UI."
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/contexts/AuthContext.tsx",
+          "operation": "modify",
+          "description": "Remove invite code parameter and validation logic from the register function. Update the registration flow to accept only displayName, username, and password. Remove any invite code references from the RegisterData interface and ensure the AuthContext no longer validates or stores invite codes during teacher registration."
+        },
+        {
+          "path": "frontend/src/pages/LoginPage.tsx",
+          "operation": "modify",
+          "description": "Remove the 'Registration/Invite Code' input field from the teacher registration form UI. Update the form state to remove inviteCode tracking. Remove any invite code validation error messages and update the form submission handler to call the register function without an invite code parameter."
+        },
+        {
+          "path": "frontend/src/utils/storage.ts",
+          "operation": "modify",
+          "description": "Remove any invite code validation or storage logic related to teacher registration. Ensure the REGISTERED_TEACHERS storage key and related functions no longer expect or store invite codes. Verify that the seedSampleData function and demo account seeding are unaffected by the invite code removal."
+        }
+      ]
+    }
+  ]
+}

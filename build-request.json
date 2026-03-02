@@ -1,0 +1,44 @@
+{
+  "kind": "build_request",
+  "title": "Remove invite code from teacher registration",
+  "projectName": "EduTrack Pro",
+  "priority": "normal",
+  "requirements": [
+    {
+      "id": "REQ-12",
+      "text": "Remove the invite code field and its validation logic from the teacher registration flow. The registration form on the login page should no longer display a 'Registration/Invite Code' input field. The AuthContext must no longer require or validate an invite code when registering a new teacher — any new teacher can register by providing only their Display Name, Username, and Password.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-4"
+        ],
+        "quotes": [
+          "remove the invite code option in the code"
+        ]
+      },
+      "acceptanceCriteria": [
+        "The teacher registration form does not contain an invite code input field.",
+        "Submitting the registration form with only Display Name, Username, and Password successfully creates a new teacher account.",
+        "No invite code validation logic remains in AuthContext.tsx or LoginPage.tsx.",
+        "Existing demo accounts (teacher/class1 and principal/admin) continue to work after the change.",
+        "Previously registered teachers stored in localStorage are still able to log in.",
+        "No error messages referencing an invite code appear anywhere in the UI."
+      ]
+    }
+  ],
+  "constraints": [
+    "Do not modify any files listed under frontend.immutablePaths.",
+    "Do not alter the existing demo account credentials or session logic.",
+    "Do not remove the 'Register as Teacher' option itself — only remove the invite code field and its validation."
+  ],
+  "nonGoals": [
+    "Adding any new registration fields or steps.",
+    "Implementing email verification or any other gating mechanism to replace the invite code.",
+    "Changing the login flow for existing users.",
+    "Backend changes — all auth logic remains in localStorage/frontend only."
+  ],
+  "imageRequirements": {
+    "required": [],
+    "edits": []
+  }
+}
